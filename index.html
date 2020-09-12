@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hospital Registration Form</title>
+<link rel="icon" href="images/reg.png" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<script>
+		function validatefname(){
+			var fname=document.forms["myform"]["fname"].value;
+			if (fname ==""){
+			alert("Enter your first name");
+			return false;
+			}
+		}
+		function validatelname(){
+			var lname=document.forms["myform"]["lname"].value;
+			if (lname ==""){
+			alert("Enter your last name");
+			return false;
+			}
+		}
+		function validateins(){
+			var ins = document.getElementsByName("optradio");
+                if (ins[0].checked == true) {
+                    alert("You are medically insured");
+                }
+				else if(ins[1].checked == true) {
+                    alert("You are notmedically insured");
+                }
+				else{
+					alert("Please mention you are medically insured or not")}	
+			return true; 
+		}
+		function validategender(){
+			var gender = document.getElementsByName("gender");
+                if (gender[0].checked == true) {
+                    alert("You are male");
+                }
+				else if(gender[1].checked == true) {
+                    alert("You are female");
+                }
+				else{
+					alert("Please mention your gender")}	
+			return true; 
+		}
+		
+		function validateage(){
+			var age=document.forms["myform"]["age"].value;
+			if (age ==""){
+			alert("Enter your Age");
+			return false;}
+		}
+		function validateaddr(){
+			var addr=document.forms["myform"]["addr"].value;
+			if (addr ==""){
+			alert("Enter your Address");
+			return false;}
+		}
+		function validatedoc(){
+			var doc=document.forms["myform"]["dr"].value;
+			if (doc ==""){
+			alert("Enter your referred doctor");
+			return false;}
+		}
+		
+	 </script>
+</head>
+<body>
+
+<h1 class='text'>Patient Registration Form</h1>
+
+
+<div class='text2'>
+<pre style='opacity:1;'>                                   					<img src='images/reg.png'style='opacity:1;' width='65px' height='65px'></pre> 
+<form method='post' name="myform" align='center'>
+<table>
+	<tr>
+		<td><input id='fname' type='text' name='fname' placeholder='Patient First Name'><br></td>
+	</tr>
+	<tr>
+		<td><input id='lname' type='text' name='lname' placeholder='Patient Last Name'><br></td>
+	</tr>
+	<tr>
+		<td><input type="radio" name="optradio" id="mi">
+		<label for="mi" id='mi1'>Medically Insured</label>
+		<label>
+		<input type="radio" name="optradio" id="nmi">
+		<label for="nmi" id="nmi1">Not Insured</label><br></td>
+	</tr>
+	<tr>
+		<input class="form-control"  type="date" name="dob" id="dob"placeholder="DOB"><br></td>
+	</tr>	
+	
+	<tr>
+		<td><input type="radio" id="male" name="gender" value="male" >
+		<label for="male" id="male1">Male</label><br></td>
+		<td><input type="radio" id="female" name="gender" value="female">
+		<label for="male" id="female1">Female</label><br></td>
+	</tr>
+	<tr>
+		<td><input id='email' type='email' name='email' placeholder='E-mail'><br></td>
+	</tr>
+	<tr>
+		<td><input id='contact' type='tel' name='contact'  placeholder='Phone Number' pattern="[0-9]{10}"><br></td>
+	</tr>
+	<tr>
+		<td><input id='age' type='text' name='age' placeholder='Age'><br></td>
+	</tr>
+	<tr>
+		<td><input id='addr' type='text' name='addr' placeholder='Address'><br></td>
+	</tr>
+	<tr>
+		<td><input id='dr' type='text' name='dr' placeholder='Referred Doctor'><br></td>
+	</tr>
+	<tr>
+		<td>
+			<select name="dept" id="dept" class="select">
+		<option>Ward</option>
+		<option>Suit</option>
+		<option>Deluxe</option>
+		<option >Special Room</option>
+		<option >Semi Private</option>
+		<option >General</option>
+    </select>
+		</td>
+	</tr>
+	<tr>
+		<td><input name="rep" placeholder="Report" type="file" id="rep"></td>
+	</tr>
+	<tr>
+		<td><input type='submit' value='Submit' onclick="return validatefname(), validatelname(),validateins(), validategender(), validateage(), validateaddr(), validatedoc()"></td>
+		<td><input type='reset' value='Reset'></td>
+	</tr>
+</table>
+</form>
+
+
+  
+</div>
+</body>
+</html>
